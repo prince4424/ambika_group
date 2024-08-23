@@ -6,3 +6,37 @@
 #callbackForm {
     width: 250px;
 }
+.request-callback-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000; /* Ensures the button is on top of other elements */
+}
+.property-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.property-card img {
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures that images cover the space without distortion */
+}
+
+.property-card .card-body {
+    flex-grow: 1; /* Allow the card body to take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.properties-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.properties-row .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
