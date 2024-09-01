@@ -243,3 +243,30 @@ function toggleCallbackForm() {
 function scrollToProperties() {
     document.getElementById('propertiesSection').scrollIntoView({ behavior: 'smooth' });
 }
+
+$(document).ready(function() {
+    $('#callbackForm').on('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission behavior
+
+        $.ajax({
+            url: 'https://formspree.io/f/mjkbpbbl', // Your Formspree endpoint
+            method: 'POST',
+            data: $(this).serialize(), // Serialize the form data directly
+            dataType: 'json',
+            success: function() {
+                var toastEl = new bootstrap.Toast($('#submissionToast')[0], {
+                    delay: 5000  // Auto hide after 4000ms
+                });
+                toastEl.show(); // Show the toast notification
+                setTimeout(function() {
+                    window.location.href = "https://ambika-group-2uyh.vercel.app/"; // Redirect after 4 seconds
+                }, 5000); // Set timeout for 4 seconds
+            },
+            error: function() {
+                $('#submissionToast .toast-body').text('There was a problem with your submission. Please try again.');
+                var toastEl = new bootstrap.Toast($('#submissionToast')[0]);
+                toastEl.show(); // Show error in the toast notification
+            }
+        });
+    });
+});
