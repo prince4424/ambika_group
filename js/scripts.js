@@ -259,8 +259,8 @@ $(document).ready(function() {
                 });
                 toastEl.show(); // Show the toast notification
                 setTimeout(function() {
-                    window.location.href = "https://ambika-group-2uyh.vercel.app/"; // Redirect after 4 seconds
-                }, 5000); // Set timeout for 4 seconds
+                    window.location.href = "https://devbhoomiestate.in/"; // Redirect after 4 seconds
+                }, 3000); // Set timeout for 3 seconds
             },
             error: function() {
                 $('#submissionToast .toast-body').text('There was a problem with your submission. Please try again.');
