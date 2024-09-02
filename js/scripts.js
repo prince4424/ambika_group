@@ -249,7 +249,7 @@ $(document).ready(function() {
         e.preventDefault(); // Prevent the default form submission behavior
 
         $.ajax({
-            url: 'https://formspree.io/f/mjkbpbbl', // Your Formspree endpoint
+            url: 'https://formspree.io/f/mgvwqeep', // Your Formspree endpoint
             method: 'POST',
             data: $(this).serialize(), // Serialize the form data directly
             dataType: 'json',
