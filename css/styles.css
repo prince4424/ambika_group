@@ -80,10 +80,11 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.modal-header {
-    background-color: #024959; /* Deep blue-green, consistent with navbar */
+/* .modal-header {
+    background-color: #024959;
     color: #fff;
-}
+} 
+*/
 .modal-title {
     font-weight: 600;
 }

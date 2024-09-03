@@ -270,3 +270,9 @@ $(document).ready(function() {
         });
     });
 });
+document.querySelectorAll('.show-info-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        var info = this.previousElementSibling;
+        info.style.display = info.style.display === 'block' ? 'none' : 'block'; // Toggle display
+    });
+});
