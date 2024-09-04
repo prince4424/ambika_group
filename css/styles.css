@@ -48,7 +48,7 @@
     background-color: #f8f9fa;
 }
 .contact-info {
-    background-color: #007bff;
+    background-color: #3b3b3b;
     color: white;
     padding: 30px;
     border-radius: 8px;
@@ -71,20 +71,13 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .btn {
-    background-color: #ffc107;  /* A slightly different shade to indicate active/hover state */
-}
+
 
 .modal-content {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-/* .modal-header {
-    background-color: #024959;
-    color: #fff;
-} 
-*/
 .modal-title {
     font-weight: 600;
 }
@@ -115,7 +108,7 @@
 }
 /* Custom Modal Styles */
 .modal-header {
-    background-color: #007bff; /* Primary color */
+    background-color: #3b3b3b; /* Primary color */
     color: white;
     border-bottom: none; /* Remove the default border */
 }
@@ -159,4 +152,45 @@
 .btn-warning:hover {
     background-color: #e0a800; /* Darker on hover */
     border-color: #d39e00;
+}
+/* footer */
+html, body {
+    height: 100%; /* ensure full height */
+    margin: 0; /* reset default margin */
+}
+body {
+    display: flex;
+    flex-direction: column; /* stack content vertically */
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.content-wrap {
+    flex: 1; /* expand to fill available space */
+    padding: 20px; /* some padding around content */
+}
+.navbar {
+    background-color: #024959;
+}
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+.contact-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background-color: #024959 !important;
+    color: #fff !important;
+    padding: 20px 0 !important;
+    text-align: center!important;
+}
+/* footer a {
+    color: #ffc107;
+} */
+footer a:hover {
+    text-decoration: none;
+    color: #fff;
 }
