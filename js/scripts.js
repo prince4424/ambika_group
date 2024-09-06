@@ -1,19 +1,39 @@
 // Data for properties (you can replace this with dynamic data fetching)
 const propertiesData = {
-    location1: [
+    KhararLocation: [
         {
-            title: "AMBIKA_NAGAR", imgSrc: [
-                "assets/images/property1.jpg",
-                "assets/images/property2.jpg",
-                "assets/images/property4.jpg"
-            ], description: "Beautiful house with a garden.", price: "₹50 Lakh", size: "1500 sq.ft", contact: "9876543210"
+            title: "AMBIKA NAGAR",
+            imgSrc: ["/assets/images/ambikaNagar2.jpg", "assets/images/ambikaNagar3.jpg", "assets/images/ambikaNagar4.jpg"],
+            description: "Beautiful house with a garden.",
+            plotPrice: "₹50 Lakh",
+            plotsize: "1500 sq.ft",
+            flatSize: "200 sq.yd",
+            flatPrice: "₹30 Lakh",
+            contact: "7696842317",
+            location: "Ambika Nagar",
+            mapLink: "https://maps.app.goo.gl/biqUVjf6ZxnvR8Wz9"
+
+
+
+
         },
         {
             title: "AMBIKA GREEN", imgSrc: [
-                "assets/images/property1.jpg",
-                "assets/images/property2.jpg",
-                "assets/images/property4.jpg"
-            ], description: "Modern apartment in the city center.", price: "₹70 Lakh", size: "1800 sq.ft", contact: "9876543211"
+                "/assets/images/ambikaGreen1.jpg",
+                "assets/images/ambikaGreen2.jpg",
+                "assets/images/ambikaGreen3.jpg",
+                "assets/images/ambikaGreen4.jpg",
+                "assets/images/ambikaGreen5.jpg"
+
+            ], description: "Modern apartment in the city center.",
+            plotPrice: "₹50 Lakh",
+            plotsize: "1500 sq.ft",
+            flatSize: "200 sq.yd",
+            flatPrice: "₹30 Lakh",
+            contact: "9876543210",
+            location: "Ambika Greens",
+            
+            mapLink: "https://maps.app.goo.gl/uaWFWuDZHvp2GcAj8"
         },
         {
             title: "AMBIKA HEIGHTS", imgSrc: [
@@ -30,7 +50,7 @@ const propertiesData = {
             ], description: "Charming townhouse near the beach.", price: "₹60 Lakh", size: "2000 sq.ft", contact: "9876543213"
         }
     ],
-    location2: [
+    KuraliLocation: [
         {
             title: "KURALI RAYSS", imgSrc: [
                 "assets/images/property1.jpg",
@@ -60,7 +80,7 @@ const propertiesData = {
             ], description: "Charming townhouse near the beach."
         }
     ],
-    location3: [
+    MohaliLocation: [
         {
             title: "Property 5", imgSrc: [
                 "assets/images/property1.jpg",
@@ -127,21 +147,13 @@ function showPropertyDetails(location, index) {
     const modalTitle = document.getElementById("propertyModalLabel");
     const modalBody = document.getElementById("propertyModalBody");
 
-    // Creating carousel HTML dynamically
     let carouselIndicators = '';
     let carouselItems = '';
     property.imgSrc.forEach((img, idx) => {
-        carouselIndicators += `
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${idx}" class="${idx === 0 ? 'active' : ''}" aria-label="Slide ${idx + 1}"></button>
-        `;
-        carouselItems += `
-            <div class="carousel-item ${idx === 0 ? 'active' : ''}">
-                <img src="${img}" class="d-block w-100" alt="Property image ${idx + 1}">
-            </div>
-        `;
+        carouselIndicators += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${idx}" class="${idx === 0 ? 'active' : ''}" aria-label="Slide ${idx + 1}"></button>`;
+        carouselItems += `<div class="carousel-item ${idx === 0 ? 'active' : ''}"><img src="${img}" class="d-block w-100" alt="Property image ${idx + 1}"></div>`;
     });
 
-    // Modal content with enhanced design
     modalBody.innerHTML = `
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">${carouselIndicators}</div>
@@ -160,19 +172,20 @@ function showPropertyDetails(location, index) {
                 <h5 class="card-title text-center">${property.title}</h5>
                 <p class="card-text text-center">${property.description}</p>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center"><strong>Price:</strong> ${property.price}</li>
-                    <li class="list-group-item text-center"><strong>Size:</strong> ${property.size}</li>
-                    <li class="list-group-item text-center"><strong>Contact:</strong> ${property.contact}</li>
+                    <li class="list-group-item "><strong>Location:</strong> <a href="${property.mapLink}" target="_blank">${property.location}</a></li>
+                    <li class="list-group-item "><strong>Plot starts from:</strong> ${property.plotPrice}</li>
+                    <li class="list-group-item "><strong>Plot Size:</strong> ${property.plotsize}</li>
+                    <li class="list-group-item "><strong>Flat price starts from:</strong> ${property.flatPrice}</li>
+                    <li class="list-group-item "><strong>Flat Size:</strong> ${property.flatSize}</li>
+                    <li class="list-group-item "><strong>Contact Us :</strong> ${property.contact}</li>
                 </ul>
             </div>
         </div>
     `;
 
-    // Update modal title and center it
     modalTitle.innerText = "Property Details";
     modalTitle.classList.add('text-center');
 
-    // Show the modal
     $('#propertyModal').modal('show');
 }
 
@@ -244,8 +257,8 @@ function scrollToProperties() {
     document.getElementById('propertiesSection').scrollIntoView({ behavior: 'smooth' });
 }
 
-$(document).ready(function() {
-    $('#callbackForm').on('submit', function(e) {
+$(document).ready(function () {
+    $('#callbackForm').on('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission behavior
 
         $.ajax({
@@ -253,16 +266,16 @@ $(document).ready(function() {
             method: 'POST',
             data: $(this).serialize(), // Serialize the form data directly
             dataType: 'json',
-            success: function() {
+            success: function () {
                 var toastEl = new bootstrap.Toast($('#submissionToast')[0], {
                     delay: 5000  // Auto hide after 4000ms
                 });
                 toastEl.show(); // Show the toast notification
-                setTimeout(function() {
+                setTimeout(function () {
                     window.location.href = "https://devbhoomiestate.in/"; // Redirect after 4 seconds
                 }, 3000); // Set timeout for 3 seconds
             },
-            error: function() {
+            error: function () {
                 $('#submissionToast .toast-body').text('There was a problem with your submission. Please try again.');
                 var toastEl = new bootstrap.Toast($('#submissionToast')[0]);
                 toastEl.show(); // Show error in the toast notification
@@ -271,8 +284,12 @@ $(document).ready(function() {
     });
 });
 document.querySelectorAll('.show-info-btn').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         var info = this.previousElementSibling;
         info.style.display = info.style.display === 'block' ? 'none' : 'block'; // Toggle display
     });
 });
+function showComingSoon() {
+    var myModal = new bootstrap.Modal(document.getElementById('comingSoonModal'), {});
+    myModal.show();
+  }

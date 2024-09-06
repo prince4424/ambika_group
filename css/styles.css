@@ -19,7 +19,7 @@
 }
 
 .property-card img {
-    height: 200px; /* Fixed height for all images */
+    height: 300px; /* Fixed height for all images */
     object-fit: cover; /* Ensures that images cover the space without distortion */
 }
 
@@ -193,4 +193,11 @@ footer {
 footer a:hover {
     text-decoration: none;
     color: #fff;
+}
+.agent-img {
+    width: 100%;  /* Sets the width to fill the container */
+    height: 350px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+    border-top-left-radius: .25rem; /* Optional: Matches Bootstrap's card image rounding */
+    border-top-right-radius: .25rem; /* Optional: Matches Bootstrap's card image rounding */
 }
