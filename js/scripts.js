@@ -150,7 +150,7 @@ function showPropertyDetails(location, index) {
     let carouselIndicators = '';
     let carouselItems = '';
     property.imgSrc.forEach((img, idx) => {
-        carouselIndicators += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${idx}" class="${idx === 0 ? 'active' : ''}" aria-label="Slide ${idx + 1}"></button>`;
+        carouselIndicators += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${idx}" class="${idx === 0 ? 'active' : ''}" aria-label="Slide ${idx + 1} "></button>`;
         carouselItems += `<div class="carousel-item ${idx === 0 ? 'active' : ''}"><img src="${img}" class="d-block w-100" alt="Property image ${idx + 1}"></div>`;
     });
 
