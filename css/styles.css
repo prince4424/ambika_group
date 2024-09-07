@@ -201,3 +201,20 @@ footer a:hover {
     border-top-left-radius: .25rem; /* Optional: Matches Bootstrap's card image rounding */
     border-top-right-radius: .25rem; /* Optional: Matches Bootstrap's card image rounding */
 }
+
+/* contac */
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .contact-form {
+    background: #f8f9fa;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+  }
+  .contactImage {
+    height: 50vh; /* 50% of the viewport height */
+    /* background-image: url("/assets/images/contactpage.jpg"); */
+    background-size: cover;
+    background-position: center;
+  }
+  
